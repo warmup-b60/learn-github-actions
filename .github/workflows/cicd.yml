@@ -8,28 +8,28 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Run a one-line script
-        run: Doing a build
+        run: echo Doing a build
 
   test:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
       - name: Run a one-line script
-        run: Doing a build
+        run: echo Doing a build
 
   dev-deploy:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
       - name: Run a one-line script
-        run: Doing a deployment on dev       
+        run: echo Doing a deployment on dev       
 
   qa-deploy:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
       - name: Run a one-line script
-        run: DDoing a deployment on qa       
+        run: echo Doing a deployment on qa       
 
 
   uat-deploy:
@@ -37,11 +37,11 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Run a one-line script
-        run: Doing a deployment on uat
+        run: echo Doing a deployment on uat
 
   prod-deploy:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
       - name: Run a one-line script
-        run: Doing a deployment on prod
+        run: echo Doing a deployment on prod
