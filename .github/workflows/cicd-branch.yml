@@ -1,0 +1,56 @@
+name: CI-Branch
+on:
+  push:  
+    branches-ignore:
+      - main
+  workflow_dispatch:
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Run a one-line script
+        run: echo Doing a build
+
+  test:
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - uses: actions/checkout@v4
+      - name: Run a one-line script
+        run: echo Doing a build
+
+  dev-deploy:
+    needs: test
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Run a one-line script
+        run: echo Doing a deployment on dev       
+
+  # qa-deploy:
+  #   needs: dev-deploy
+  #   runs-on: ubuntu-latest
+  #   environment: qa
+  #   steps:
+  #     - uses: actions/checkout@v4
+  #     - name: Run a one-line script
+  #       run: echo Doing a deployment on qa       
+
+  # uat-deploy:
+  #   runs-on: ubuntu-latest
+  #   needs: qa-deploy
+  #   environment: uat
+  #   steps:
+  #     - uses: actions/checkout@v4
+  #     - name: Run a one-line script
+  #       run: echo Doing a deployment on uat
+
+  # prod-deploy:
+  #   runs-on: ubuntu-latest
+  #   needs: uat-deploy
+  #   environment: prod
+  #   steps:
+  #     - uses: actions/checkout@v4
+  #     - name: Run a one-line script
+  #       run: echo Doing a deployment on prod
