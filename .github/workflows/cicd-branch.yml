@@ -20,13 +20,13 @@ jobs:
       - name: Run a one-line script
         run: echo Doing a build
 
-  dev-deploy:
-    needs: test
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - name: Run a one-line script
-        run: echo Doing a deployment on dev       
+  # dev-deploy:
+  #   needs: test
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - uses: actions/checkout@v4
+  #     - name: Run a one-line script
+  #       run: echo Doing a deployment on dev       
 
   # qa-deploy:
   #   needs: dev-deploy
